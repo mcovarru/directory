@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/scala"/>
+	<classpathentry kind="var" path="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6.jar" sourcepath="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/c3p0/c3p0/0.9.1/c3p0-0.9.1.jar" sourcepath="M2_REPO/c3p0/c3p0/0.9.1/c3p0-0.9.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-app/1.2.1/databinder-app-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-app/1.2.1/databinder-app-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-app-hib/1.2.1/databinder-app-hib-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-app-hib/1.2.1/databinder-app-hib-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-auth-components/1.2.1/databinder-auth-components-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-auth-components/1.2.1/databinder-auth-components-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-auth-components-hib/1.2.1/databinder-auth-components-hib-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-auth-components-hib/1.2.1/databinder-auth-components-hib-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-components/1.2.1/databinder-components-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-components/1.2.1/databinder-components-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-components-hib/1.2.1/databinder-components-hib-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-components-hib/1.2.1/databinder-components-hib-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-models/1.2.1/databinder-models-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-models/1.2.1/databinder-models-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/databinder/databinder-models-hib/1.2.1/databinder-models-hib-1.2.1.jar" sourcepath="M2_REPO/net/databinder/databinder-models-hib/1.2.1/databinder-models-hib-1.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" sourcepath="M2_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar" sourcepath="M2_REPO/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-annotations/3.4.0.GA/hibernate-annotations-3.4.0.GA.jar" sourcepath="M2_REPO/org/hibernate/hibernate-annotations/3.4.0.GA/hibernate-annotations-3.4.0.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-c3p0/3.3.1.GA/hibernate-c3p0-3.3.1.GA.jar" sourcepath="M2_REPO/org/hibernate/hibernate-c3p0/3.3.1.GA/hibernate-c3p0-3.3.1.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-commons-annotations/3.1.0.GA/hibernate-commons-annotations-3.1.0.GA.jar" sourcepath="M2_REPO/org/hibernate/hibernate-commons-annotations/3.1.0.GA/hibernate-commons-annotations-3.1.0.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-core/3.3.1.GA/hibernate-core-3.3.1.GA.jar" sourcepath="M2_REPO/org/hibernate/hibernate-core/3.3.1.GA/hibernate-core-3.3.1.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javassist/javassist/3.4.GA/javassist-3.4.GA.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty/6.1.16/jetty-6.1.16.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty/6.1.16/jetty-6.1.16-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-util/6.1.16/jetty-util-6.1.16.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-util/6.1.16/jetty-util-6.1.16-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/transaction/jta/1.1/jta-1.1.jar" sourcepath="M2_REPO/javax/transaction/jta/1.1/jta-1.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-jdk14/1.4.3/slf4j-jdk14-1.4.3.jar" sourcepath="M2_REPO/org/slf4j/slf4j-jdk14/1.4.3/slf4j-jdk14-1.4.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket/1.3.5/wicket-1.3.5.jar" sourcepath="M2_REPO/org/apache/wicket/wicket/1.3.5/wicket-1.3.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-auth-roles/1.3.5/wicket-auth-roles-1.3.5.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-auth-roles/1.3.5/wicket-auth-roles-1.3.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-extensions/1.3.5/wicket-extensions-1.3.5.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-extensions/1.3.5/wicket-extensions-1.3.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" sourcepath="M2_REPO/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar"/>
+	<classpathentry kind="con" path="ch.epfl.lamp.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
