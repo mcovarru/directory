@@ -4,8 +4,7 @@ import net.databinder.hib.DataApplication;
 import net.databinder.hib.Databinder;
 import net.databinder.hib.SessionUnit;
 import net.databinder.hib.conv.DataConversationRequestCycle;
-import example.Contact;
-import example.Category;
+
 
 import org.apache.wicket.Request;
 import org.apache.wicket.RequestCycle;
