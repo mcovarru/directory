@@ -15,6 +15,11 @@
       <artifactId>databinder-app-hib</artifactId>
       <version>${databinder.version}</version>
     </dependency>
+	<dependency>
+		<groupId>sybase</groupId>
+		<artifactId>jconnect</artifactId>
+		<version>[6.05.01,6.05.99999]</version>
+	</dependency>
   </dependencies>
 
   <build>
