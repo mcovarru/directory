@@ -31,14 +31,14 @@ class DirectoryApplication extends DataApplication
     if (isDevelopment()) {
       Databinder.ensureSession(new SessionUnit() {
         override def run(sess: Session) = {
-          val categories = 
+          val categories: Long = 
             sess.createQuery("select count(*) from ContactsCategory").uniqueResult().asInstanceOf[Long]
           if (categories == 0) {
             DirectoryApplication.logger.info("No categories found in development mode.")
             val names = Array("Friend", "Roman", "Countryman")
             for (name <- names) {
               val cat = new Category()
-              cat.setName(name)
+              cat.name = name
               sess.save(cat)
             }
             sess.getTransaction().commit()
