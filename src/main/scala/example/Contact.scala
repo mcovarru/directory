@@ -17,7 +17,7 @@ class Contact extends Serializable with Comparable[Contact]
   @GeneratedValue { val generator = "system-hilo" }
   @GenericGenerator{ val name = "system-hilo", val strategy = "hilo"}
   @BeanProperty
-  var id: Integer = _
+  var id: java.lang.Integer = _
   
   @BeanProperty
   var name: String = _
@@ -26,7 +26,7 @@ class Contact extends Serializable with Comparable[Contact]
   var phoneNumber: String = _
   
   @Version
-  var version: Integer = _
+  var version: java.lang.Integer = _
   
   @BeanProperty @ManyToOne
   var category: Category = _
@@ -40,7 +40,7 @@ class Contact extends Serializable with Comparable[Contact]
 class Category extends Serializable
 {
   @Id @GeneratedValue @BeanProperty
-  var id: Integer = _
+  var id: java.lang.Integer = _
   
   @BeanProperty
   var name: String = _
