@@ -1,7 +1,6 @@
 package example
 
 import net.databinder.hib._
-import net.databinder.hib.conv.DataConversationRequestCycle
 
 import org.apache.wicket._
 import org.apache.wicket.protocol.http._
@@ -24,7 +23,7 @@ class DirectoryApplication extends DataApplication
   def getHomePage = classOf[ListAndEdit]
   
   override def newRequestCycle(request: Request, response: Response) = {
-    new DataConversationRequestCycle(this, request.asInstanceOf[WebRequest], response.asInstanceOf[WebResponse])
+    new DataRequestCycle(this, request.asInstanceOf[WebRequest], response.asInstanceOf[WebResponse])
   }
   
   protected override def init {

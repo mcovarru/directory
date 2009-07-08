@@ -5,7 +5,6 @@ import java.util._
 import net.databinder.components._
 import net.databinder.components.hib._
 import net.databinder.hib.Databinder
-import net.databinder.hib.conv.components.ConversationPage
 import net.databinder.models.hib._
 
 import org.apache.wicket.AttributeModifier
@@ -14,7 +13,7 @@ import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior
 import org.apache.wicket.ajax.markup.html.AjaxLink
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow
 import org.apache.wicket.markup.ComponentTag
-import org.apache.wicket.markup.html.WebMarkupContainer
+import org.apache.wicket.markup.html._
 import org.apache.wicket.markup.html.basic.Label
 import org.apache.wicket.markup.html.form._
 import org.apache.wicket.markup.html.list._
@@ -25,7 +24,7 @@ import org.hibernate.Query
 import org.hibernate.Session
 
 
-class ListAndEdit extends ConversationPage {
+class ListAndEdit extends WebPage {
   var form: DataForm = _
   var modalEdit: ModalWindow = _
   var contactsWrap: AjaxCell = _
