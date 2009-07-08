@@ -14,17 +14,6 @@
 <div id="listings">
 <h2>Contact listings</h2>
 
-<!--
-<form action="/"> <!-- form not submitted -->
-<!--	<div><select wicket:id="categoryFilter" id="categoryFilter">
-		<option>All categories</option>
-		<option>Client</option>
-		<option>Colleague</option>
-		<option>Friend</option>
-		<option>Family</option>
-	</select></div>
-</form>
--->
 
 <div wicket:id="search">
 	<!-- The live search panel's (more complicated) contents will replace this filler, 
@@ -38,12 +27,10 @@
 		<tr>
 			<th>Name</th>
 			<th>Phone Number</th>
-			<!-- <th>Category</th> -->
 		</tr>
 		<tr class="a" wicket:id="contacts">
 			<td><a wicket:id="link" href="#"><span wicket:id="name">Seth</span></a></td>
 			<td wicket:id="phoneNumber">555-1212</td>
-			<!-- <td wicket:id="category">Client</td> -->
 		</tr>
 	<wicket:remove>
 		<tr class="b">
@@ -57,20 +44,11 @@
 
 </div>
 
-<p><a wicket:id="new" href="#">Create new contact</a></p>
-
-<form wicket:id="saveForm">
-	<p>
-		<input type="submit" value="Save changes"/>
-		<input type="submit" wicket:id="revert"  value="Revert"/>
-	</p>
-</form>
-
 <!-- div to hold initially invisible edit dialog-->
 <div wicket:id="modalEdit">
 </div>
 
-<p id="footer"><a href="/site/show/phone-directory">About this application</a></p>
+<!-- <p id="footer"><a href="/site/show/phone-directory">About this application</a></p> -->
 
 </body>
 </html>

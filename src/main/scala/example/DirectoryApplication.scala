@@ -28,32 +28,7 @@ class DirectoryApplication extends DataApplication
   }
   
   protected override def init {
-    /*
-    if (isDevelopment()) {
-      Databinder.ensureSession(new SessionUnit() {
-        override def run(sess: Session) = {
-          val categories: Long = 
-            sess.createQuery("select count(*) from ContactsCategory").uniqueResult().asInstanceOf[Long]
-          if (categories == 0) {
-            DirectoryApplication.logger.info("No categories found in development mode.")
-            val names = Array("Friend", "Roman", "Countryman")
-            for (name <- names) {
-              val cat = new Category()
-              cat.name = name
-              sess.save(cat)
-            }
-            sess.getTransaction().commit()
-            DirectoryApplication.logger.info("Created default categories.")
-          }
-          // need to return null for some reason?
-          null
-        }
-      })
-    }
-    */                               
-
     mountBookmarkablePage("/list", classOf[ListAndEdit])
-
   }
   
   override def configureHibernate(config: AnnotationConfiguration) = {  
