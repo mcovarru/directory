@@ -28,6 +28,7 @@ class DirectoryApplication extends DataApplication
   }
   
   protected override def init {
+    /*
     if (isDevelopment()) {
       Databinder.ensureSession(new SessionUnit() {
         override def run(sess: Session) = {
@@ -49,6 +50,7 @@ class DirectoryApplication extends DataApplication
         }
       })
     }
+    */                               
 
     mountBookmarkablePage("/list", classOf[ListAndEdit])
 
@@ -57,7 +59,7 @@ class DirectoryApplication extends DataApplication
   override def configureHibernate(config: AnnotationConfiguration) = {  
     super.configureHibernate(config)
     config.addAnnotatedClass(classOf[Contact])
-    config.addAnnotatedClass(classOf[Category])
+    config.addAnnotatedClass(classOf[Name])
   }
   
 }

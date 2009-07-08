@@ -29,9 +29,9 @@ import org.hibernate.Session
 class ListAndEdit extends ConversationPage {
   var form: DataForm = _
   var modalEdit: ModalWindow = _
-  var categoryFilter: DropDownChoice = _
+  // var categoryFilter: DropDownChoice = _
   var contactsWrap: AjaxCell = _
-  val categoryListModel = new HibernateListModel("from ContactsCategory order by Name")
+  // val categoryListModel = new HibernateListModel("from ContactsCategory order by Name")
   val unflushedSaves = new HashSet[Contact]
   
   add(new DataStyleLink("css"))
@@ -45,6 +45,7 @@ class ListAndEdit extends ConversationPage {
 
   add(search)
   
+  /*
   categoryFilter = new DropDownChoice("categoryFilter",
                                       new HibernateObjectModel(), categoryListModel)
   add(categoryFilter)
@@ -55,6 +56,7 @@ class ListAndEdit extends ConversationPage {
     }
   })
   categoryFilter.setNullValid(true)
+  */
 
   modalEdit = new ModalWindow("modalEdit")
   modalEdit.setContent(new EditPanel(modalEdit.getContentId()))
@@ -67,7 +69,7 @@ class ListAndEdit extends ConversationPage {
                                              override def bind(query: Query) {
                                                query
                                                .setString("search", search.getSearch())
-                                               .setParameter("category", categoryFilter.getModelObject())
+                                               // .setParameter("category", categoryFilter.getModelObject())
                                              }
                                            }) {
                                              override protected def load() = {
@@ -107,7 +109,7 @@ class ListAndEdit extends ConversationPage {
       item.add(link.add(new Label("name")))
 
       item.add(new Label("phoneNumber"))
-      item.add(new Label("category"))
+      // item.add(new Label("category"))
       item.add(new AlternatingClassModifier(item)) // table row color
 
     }
@@ -163,10 +165,10 @@ class ListAndEdit extends ConversationPage {
       add(new RequiredTextField("name").setLabel(new Model("contact name")))
       add(new TextField("phoneNumber"))
 
-      var category = new DropDownChoice("category", categoryListModel)
+      // var category = new DropDownChoice("category", categoryListModel)
 
-      category.setNullValid(true)
-      add(category)
+      // category.setNullValid(true)
+      // add(category)
 
       add(new AjaxButton("okay", this) {
         protected override def onSubmit(target: AjaxRequestTarget, form: Form) {
