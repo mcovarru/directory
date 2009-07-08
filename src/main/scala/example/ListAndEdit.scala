@@ -18,8 +18,7 @@ import org.apache.wicket.markup.html.basic.Label
 import org.apache.wicket.markup.html.form._
 import org.apache.wicket.markup.html.list._
 import org.apache.wicket.markup.html.panel._
-import org.apache.wicket.model.IModel
-import org.apache.wicket.model.Model
+import org.apache.wicket.model._
 import org.hibernate.Query
 import org.hibernate.Session
 
@@ -70,6 +69,7 @@ class ListAndEdit extends WebPage {
           }
         }
       }
+      val mobj = item.getModelObject()
       item.add(link.add(new Label("name")))
 
       item.add(new Label("phoneNumber"))

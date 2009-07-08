@@ -5,14 +5,14 @@
 
 <!-- page specific stylesheet, loaded by class loader -->
 <wicket:link><link href="ListAndEdit.css" type="text/css" rel="stylesheet" /></wicket:link>
-<title>Phone Directory</title>
+<title>PFGRC Microarray Investigator Lookup</title>
 </head>
 <body>
 <div class="feedback" wicket:id="feedback"><ul><li>Feedback message</li></ul></div>
-<h1>Phone Directory</h1>
+<h1>PFGRC Microarray Investigator Lookup</h1>
 
 <div id="listings">
-<h2>Contact listings</h2>
+<h2>Enter name</h2>
 
 
 <div wicket:id="search">
@@ -25,16 +25,16 @@
 <div wicket:id="contactsWrap">
 	<table id="contactTable"><tbody>
 		<tr>
-			<th>Name</th>
+			<th>Name</th>			
 			<th>Phone Number</th>
 		</tr>
 		<tr class="a" wicket:id="contacts">
-			<td><a wicket:id="link" href="#"><span wicket:id="name">Seth</span></a></td>
+			<td><a wicket:id="link" href="#"><span wicket:id="name">Seth Rogan</span></a></td>
 			<td wicket:id="phoneNumber">555-1212</td>
 		</tr>
 	<wicket:remove>
 		<tr class="b">
-			<td><a href="#"><span>Summer</span></a></td>
+			<td><a href="#"><span>Summer Sausage</span></a></td>
 			<td>555-1313</td>
 			<!-- <td>Friend</td> -->
 		</tr>
