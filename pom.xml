@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>directory</artifactId>
   <packaging>war</packaging>
-  <name>Phone directory</name>
+  <name>PFGRC Microarray Investigator Lookup</name>
   <parent>
     <groupId>net.databinder</groupId>
     <artifactId>databinder-examples</artifactId>
@@ -15,11 +15,11 @@
       <artifactId>databinder-app-hib</artifactId>
       <version>${databinder.version}</version>
     </dependency>
-	<dependency>
-		<groupId>sybase</groupId>
-		<artifactId>jconnect</artifactId>
-		<version>[6.05.01,6.05.99999]</version>
-	</dependency>
+    <dependency>
+      <groupId>sybase</groupId>
+      <artifactId>jconnect</artifactId>
+      <version>[6.05.01,6.05.99999]</version>
+    </dependency>
   </dependencies>
 
   <build>

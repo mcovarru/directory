@@ -59,20 +59,27 @@ class ListAndEdit extends WebPage {
 
   contactsWrap.add(new PropertyListView("contacts", contactList) {
     override def populateItem(item: ListItem) {
-      val existing = Databinder.getHibernateSession().contains(item.getModelObject())
       var link: WebMarkupContainer = null
-      if (existing) {
-        link = new AjaxLink("link") {
-          override def onClick(target: AjaxRequestTarget) {
-            form.setPersistentObject(item.getModelObject())
-            modalEdit.show(target)
-          }
+      link = new AjaxLink("link") {
+        override def onClick(target: AjaxRequestTarget) {
+          form.setPersistentObject(item.getModelObject())
+          modalEdit.show(target)
         }
       }
+
       val mobj = item.getModelObject()
       item.add(link.add(new Label("name")))
 
       item.add(new Label("phone"))
+
+      // this really needs to become a hyperlinked mailto: as soon as I figure out how
+      item.add(new Label("email"))
+
+      val contact = item.getModelObject()
+
+      item.add(new Label("addr_line_1", new PropertyModel(contact, "streetAddress.first")))
+      item.add(new Label("addr_line_2", new PropertyModel(contact, "streetAddress.second")))
+      item.add(new Label("addr_line_3", new PropertyModel(contact, "streetAddress.third")))
 
       item.add(new AlternatingClassModifier(item)) // table row color
 
