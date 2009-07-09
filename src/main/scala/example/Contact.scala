@@ -3,8 +3,11 @@ package example
 import java.io.Serializable
 import javax.persistence._
 
+import org.hibernate.annotations.Immutable
+
 
 @Entity
+@Immutable
 @Table { val name="z_investigators" }
 class Contact extends Serializable with Comparable[Contact]
 {
@@ -21,15 +24,14 @@ class Contact extends Serializable with Comparable[Contact]
   
   var phone: String = _
   
+  @Column { val insertable=false, val updatable=false }
   var email: String = _
 
   var fax: String = _
   
-  /*
   @ManyToOne
   @JoinColumn { val name="email", val referencedColumnName="email" }
   var login: Login = _
-  */
 
 
   def compareTo(c: Contact) = { 

@@ -14,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
+
 
 /**
  * This is written in Java rather than Scala since 2.7.x Scala does not
@@ -24,6 +26,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
+@Immutable
 @Table(name="z_logins")
 public class Login implements Serializable, Comparable<Login> {
 	
