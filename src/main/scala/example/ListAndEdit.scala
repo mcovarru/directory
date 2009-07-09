@@ -72,7 +72,7 @@ class ListAndEdit extends WebPage {
       val mobj = item.getModelObject()
       item.add(link.add(new Label("name")))
 
-      item.add(new Label("phoneNumber"))
+      item.add(new Label("phone"))
 
       item.add(new AlternatingClassModifier(item)) // table row color
 
@@ -104,7 +104,7 @@ class ListAndEdit extends WebPage {
       })
       
       add(new RequiredTextField("name").setLabel(new Model("contact name")))
-      add(new TextField("phoneNumber"))
+      add(new TextField("phone"))
 
       add(new AjaxLink("okay") {
         override def onClick(target: AjaxRequestTarget) {

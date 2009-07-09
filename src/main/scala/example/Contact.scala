@@ -16,21 +16,38 @@ class Contact extends Serializable with Comparable[Contact]
   @Embedded
   var name: Name = _
   
-  @Column { val name="phone" }
-  var phoneNumber: String = _
+  @Embedded
+  var streetAddress: StreetAddress = _
   
+  var phone: String = _
+  
+  var email: String = _
+
+  var fax: String = _
+
+
   def compareTo(c: Contact) = { 
-    val nameCmp = name.compareTo(c.name)
-    if (nameCmp == 0) phoneNumber.compareTo(c.phoneNumber) else nameCmp
+    var ret = name.compareTo(c.name)
+    if (ret == 0) {
+      ret = streetAddress.compareTo(c.streetAddress)
+      if (ret == 0) {	
+    	ret = email.compareTo(c.email)
+    	if (ret == 0) {
+    	  ret = phone.compareTo(c.phone)
+    	}
+      }
+    }
+    ret
   }
-  
+
+      
   override def equals(other: Any) = {
     val cother = other.asInstanceOf[Contact]
-    name == cother.name && phoneNumber == cother.phoneNumber
+    name == cother.name && phone == cother.phone
   }
   
   override def hashCode = {
-    name.hashCode * 42 + phoneNumber.hashCode
+    name.hashCode * 422 + streetAddress.hashCode * 42 + phone.hashCode
   }
   
 }
@@ -46,8 +63,9 @@ class Name extends Serializable with Comparable[Name]
   var last: String = _
   
   override def compareTo(other: Name) = {
-    val nfirst = first.compareTo(other.first)
-    if (nfirst == 0) last.compareTo(other.last) else nfirst
+    var ret = last.compareTo(other.last)
+    if (ret == 0) ret = first.compareTo(other.first)
+    ret
   }
   
   override def equals(other: Any) = {
@@ -62,6 +80,68 @@ class Name extends Serializable with Comparable[Name]
   override def toString = {
     last + ", " + first
   }
+  
+}
+
+
+@Embeddable
+class StreetAddress extends Serializable with Comparable[StreetAddress]
+{
+  @Column { val name="addr_line_1" }
+  var first: String = _
+  
+  @Column { val name="addr_line_2" }
+  var second: String = _
+  
+  @Column { val name="addr_line_3" }
+  var third: String = _
+
+  var city:       String = _
+  var state:      String = _
+  @Column { val name="postal_code" }
+  var postalCode: String = _
+  var country:    String = _
+
+  
+  def compareTo(other: StreetAddress) = {
+    var ret = first.compareTo(other.first)
+    if (ret == 0) {
+      ret = second.compareTo(other.second)
+      if (ret == 0)  {
+        ret = third.compareTo(other.third)
+        if (ret == 0) {
+          ret = city.compareTo(other.city)
+          if (ret == 0) {
+            ret = state.compareTo(other.state)
+            if (ret == 0) {
+              ret = postalCode.compareTo(other.postalCode)
+              if (ret == 0) {
+                ret = country.compareTo(other.country)
+              }
+            }
+          }
+        }
+      }
+    }
+    ret
+  }
+  
+  override def equals(oth: Any) = {
+    val other = oth.asInstanceOf[StreetAddress]
+    first == other.first &&
+    second == other.second &&
+    third == other.third && 
+    city == other.city &&
+    state == other.state && 
+    postalCode == other.postalCode &&
+    country == other.country
+  }
+  
+  override def hashCode = {
+    first.hashCode * 422 + second.hashCode * 42 + third.hashCode + 
+    city.hashCode * 777 + state.hashCode * 77 + postalCode.hashCode * 7 + country.hashCode
+  }
+  
   
 }
 

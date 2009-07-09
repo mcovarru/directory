@@ -34,6 +34,7 @@ class DirectoryApplication extends DataApplication
     super.configureHibernate(config)
     config.addAnnotatedClass(classOf[Contact])
     config.addAnnotatedClass(classOf[Name])
+    config.addAnnotatedClass(classOf[StreetAddress])
   }
   
 }
