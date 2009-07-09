@@ -11,7 +11,7 @@ class Contact extends Serializable with Comparable[Contact]
   @Id
   @GeneratedValue
   @Column { val name="investigator_id" }
-  var id: java.lang.Integer = _
+  var id: java.lang.Long = _
   
   @Embedded
   var name: Name = _
