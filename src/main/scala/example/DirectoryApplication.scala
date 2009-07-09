@@ -35,6 +35,8 @@ class DirectoryApplication extends DataApplication
     config.addAnnotatedClass(classOf[Contact])
     config.addAnnotatedClass(classOf[Name])
     config.addAnnotatedClass(classOf[StreetAddress])
+    config.addAnnotatedClass(classOf[Login])
+    config.addAnnotatedClass(classOf[Role])
   }
   
 }
