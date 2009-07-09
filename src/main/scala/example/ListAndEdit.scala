@@ -75,11 +75,16 @@ class ListAndEdit extends WebPage {
       // this really needs to become a hyperlinked mailto: as soon as I figure out how
       item.add(new Label("email"))
 
-      val contact = item.getModelObject()
+      val addr = item.getModelObject().asInstanceOf[Contact].streetAddress
 
-      item.add(new Label("addr_line_1", new PropertyModel(contact, "streetAddress.first")))
-      item.add(new Label("addr_line_2", new PropertyModel(contact, "streetAddress.second")))
-      item.add(new Label("addr_line_3", new PropertyModel(contact, "streetAddress.third")))
+      item.add(new Label("addr_line_1", new PropertyModel(addr, "first")))
+      item.add(new Label("addr_line_2", new PropertyModel(addr, "second")))
+      item.add(new Label("addr_line_3", new PropertyModel(addr, "third")))
+      
+      item.add(new Label("city", new PropertyModel(addr, "city")))
+      item.add(new Label("state", new PropertyModel(addr, "state")))
+      item.add(new Label("postalCode", new PropertyModel(addr, "postalCode")))
+      item.add(new Label("country", new PropertyModel(addr, "country")))
 
       item.add(new AlternatingClassModifier(item)) // table row color
 
