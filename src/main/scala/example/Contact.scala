@@ -24,6 +24,12 @@ class Contact extends Serializable with Comparable[Contact]
   var email: String = _
 
   var fax: String = _
+  
+  /*
+  @ManyToOne
+  @JoinColumn { val name="email", val referencedColumnName="email" }
+  var login: Login = _
+  */
 
 
   def compareTo(c: Contact) = { 
@@ -43,12 +49,10 @@ class Contact extends Serializable with Comparable[Contact]
       
   override def equals(other: Any) = {
     val cother = other.asInstanceOf[Contact]
-    name == cother.name && phone == cother.phone
+    email.equals(cother.email)
   }
   
-  override def hashCode = {
-    name.hashCode * 422 + streetAddress.hashCode * 42 + phone.hashCode
-  }
+  override def hashCode = email.hashCode
   
 }
 
