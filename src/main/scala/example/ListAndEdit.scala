@@ -67,7 +67,6 @@ class ListAndEdit extends WebPage {
         }
       }
 
-      val mobj = item.getModelObject()
       item.add(link.add(new Label("name")))
 
       item.add(new Label("phone"))
@@ -104,7 +103,7 @@ class ListAndEdit extends WebPage {
     add(feedback)
     feedback.setOutputMarkupId(true)
 
-    class EditForm(id: String) extends DataForm(id, new HibernateObjectModel(classOf[Contact])) {
+    class EditForm(id: String) extends DataForm(id, new HibernateObjectModel(classOf[Investigator])) {
 
       var editHeader = new WebMarkupContainer("editHeader") {
         override def isVisible = getInvestigator().id != null 
@@ -121,7 +120,8 @@ class ListAndEdit extends WebPage {
       add(new AjaxLink("okay") {
         override def onClick(target: AjaxRequestTarget) {
           modalEdit.close(target)
-          target.addComponent(contactsWrap)
+          // don't need to update since not editing
+          // target.addComponent(contactsWrap)
         }
       })
 

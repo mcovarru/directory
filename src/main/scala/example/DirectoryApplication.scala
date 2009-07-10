@@ -22,10 +22,6 @@ class DirectoryApplication extends DataApplication
   
   def getHomePage = classOf[ListAndEdit]
   
-  override def newRequestCycle(request: Request, response: Response) = {
-    new DataRequestCycle(this, request.asInstanceOf[WebRequest], response.asInstanceOf[WebResponse])
-  }
-  
   protected override def init {
     mountBookmarkablePage("/list", classOf[ListAndEdit])
   }
