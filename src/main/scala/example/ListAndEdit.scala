@@ -75,7 +75,7 @@ class ListAndEdit extends WebPage {
       // this really needs to become a hyperlinked mailto: as soon as I figure out how
       item.add(new Label("email"))
 
-      val addr = item.getModelObject().asInstanceOf[Contact].streetAddress
+      val addr = item.getModelObject().asInstanceOf[Investigator].streetAddress
 
       item.add(new Label("addr_line_1", new PropertyModel(addr, "first")))
       item.add(new Label("addr_line_2", new PropertyModel(addr, "second")))
@@ -107,12 +107,12 @@ class ListAndEdit extends WebPage {
     class EditForm(id: String) extends DataForm(id, new HibernateObjectModel(classOf[Contact])) {
 
       var editHeader = new WebMarkupContainer("editHeader") {
-        override def isVisible = getContact().id != null 
+        override def isVisible = getInvestigator().id != null 
       }
       add(editHeader.add(new Label("name")))
       
       add(new WebMarkupContainer("newHeader") {
-        override def isVisible = getContact().id == null
+        override def isVisible = getInvestigator().id == null
       })
       
       add(new RequiredTextField("name").setLabel(new Model("contact name")))
@@ -125,7 +125,7 @@ class ListAndEdit extends WebPage {
         }
       })
 
-      protected def getContact() = getModelObject().asInstanceOf[Contact]
+      protected def getInvestigator() = getModelObject().asInstanceOf[Investigator]
 
     }
     

@@ -11,7 +11,7 @@ import org.hibernate.annotations.Immutable
 @Entity
 @Immutable
 @Table { val name="z_investigators" }
-class Contact extends Serializable with Comparable[Contact]
+class Investigator extends Serializable with Comparable[Investigator]
 {
   @Id
   @GeneratedValue
@@ -31,13 +31,13 @@ class Contact extends Serializable with Comparable[Contact]
 
   var fax: String = _
   
-  @ManyToOne { val fetch=FetchType.LAZY }
-  @Fetch(FetchMode.JOIN)
+  @ManyToOne // { val fetch=FetchType.LAZY }
+  // @Fetch(FetchMode.JOIN)
   @JoinColumn { val name="email", val referencedColumnName="email" }
   var login: Login = _
 
 
-  def compareTo(c: Contact) = { 
+  def compareTo(c: Investigator) = { 
     var ret = name.compareTo(c.name)
     if (ret == 0) {
       ret = streetAddress.compareTo(c.streetAddress)
@@ -53,7 +53,7 @@ class Contact extends Serializable with Comparable[Contact]
 
       
   override def equals(other: Any) = {
-    val cother = other.asInstanceOf[Contact]
+    val cother = other.asInstanceOf[Investigator]
     email.equals(cother.email)
   }
   

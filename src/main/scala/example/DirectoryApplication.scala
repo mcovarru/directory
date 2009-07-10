@@ -32,13 +32,14 @@ class DirectoryApplication extends DataApplication
   
   override def configureHibernate(config: AnnotationConfiguration) = {  
     super.configureHibernate(config)
-    config.addAnnotatedClass(classOf[Contact])
+    config.addAnnotatedClass(classOf[Investigator])
     config.addAnnotatedClass(classOf[Name])
     config.addAnnotatedClass(classOf[StreetAddress])
     config.addAnnotatedClass(classOf[Login])
     config.addAnnotatedClass(classOf[Role])
-    // trying to turn this off in hibernate.properties does not appear to have
-    // any effect in development mode.  *very* annoying!
+    
+    // trying to turn off hbm2ddl.auto in hibernate.properties does not appear
+    // to have any effect in development mode.  *very* annoying!
     config.setProperty("hibernate.hbm2ddl.auto", "false")
   }
   
