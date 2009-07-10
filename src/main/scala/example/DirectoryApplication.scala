@@ -33,6 +33,11 @@ class DirectoryApplication extends DataApplication
     config.addAnnotatedClass(classOf[StreetAddress])
     config.addAnnotatedClass(classOf[Login])
     config.addAnnotatedClass(classOf[Role])
+    config.addAnnotatedClass(classOf[TestRole])
+    config.addAnnotatedClass(classOf[InvestigatorRole])
+    config.addAnnotatedClass(classOf[AdminRole])
+    config.addAnnotatedClass(classOf[ReportViewerRole])
+    config.addAnnotatedClass(classOf[PfgrcUserRole])
     
     // trying to turn off hbm2ddl.auto in hibernate.properties does not appear
     // to have any effect in development mode.  *very* annoying!

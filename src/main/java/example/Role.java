@@ -21,7 +21,7 @@ import org.hibernate.annotations.Immutable;
 @DiscriminatorColumn(name = "role_nam", discriminatorType = DiscriminatorType.STRING)
 @ForceDiscriminator
 @Table(name="z_roles")
-public class Role implements Comparable<Role>, Serializable {
+public abstract class Role implements Comparable<Role>, Serializable {
 	
 	/**
 	 * 
@@ -30,10 +30,10 @@ public class Role implements Comparable<Role>, Serializable {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="role_id")
+	@Column(name="role_id", insertable=false, updatable=false)
 	private Long id;
 	
-	@Column(name="role_nam")
+	@Column(name="role_nam", insertable=false, updatable=false)
 	private String name;
 
 	public int compareTo(Role o) {
@@ -72,3 +72,5 @@ public class Role implements Comparable<Role>, Serializable {
 	}
 
 }
+
+
