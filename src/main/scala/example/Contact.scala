@@ -3,6 +3,8 @@ package example
 import java.io.Serializable
 import javax.persistence._
 
+import org.hibernate.annotations.Fetch
+import org.hibernate.annotations.FetchMode
 import org.hibernate.annotations.Immutable
 
 
@@ -29,7 +31,8 @@ class Contact extends Serializable with Comparable[Contact]
 
   var fax: String = _
   
-  @ManyToOne
+  @ManyToOne { val fetch=FetchType.LAZY }
+  @Fetch(FetchMode.JOIN)
   @JoinColumn { val name="email", val referencedColumnName="email" }
   var login: Login = _
 

@@ -52,9 +52,9 @@ public class Login implements Serializable, Comparable<Login> {
 
 	@ManyToMany(targetEntity=Role.class)
 	@JoinTable(name="z_login_role_xref",
-			joinColumns=@JoinColumn(name="role_id"),
-			inverseJoinColumns=@JoinColumn(name="login_id"))
-	private Set<String> roles;
+			joinColumns=@JoinColumn(name="login_id"),
+			inverseJoinColumns=@JoinColumn(name="role_id"))
+	private Set<Role> roles;
 
 	public int compareTo(Login o) {
 		return name.compareTo(o.getName());
@@ -69,9 +69,9 @@ public class Login implements Serializable, Comparable<Login> {
 	@Override
 	public boolean equals(Object o)
 	{
+		if (o == null) return false;
 		if (!(o instanceof Login)) return false;
-		Login l = (Login) o;
-		return (name.equals(l.getName()));
+		return (name.equals(((Login) o).getName()));
 	}
 
 	public String getName() {
@@ -90,11 +90,11 @@ public class Login implements Serializable, Comparable<Login> {
 		this.password = password;
 	}
 
-	public Set<String> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<String> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 	

@@ -37,6 +37,9 @@ class DirectoryApplication extends DataApplication
     config.addAnnotatedClass(classOf[StreetAddress])
     config.addAnnotatedClass(classOf[Login])
     config.addAnnotatedClass(classOf[Role])
+    // trying to turn this off in hibernate.properties does not appear to have
+    // any effect in development mode.  *very* annoying!
+    config.setProperty("hibernate.hbm2ddl.auto", "false")
   }
   
 }

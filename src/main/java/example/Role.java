@@ -12,13 +12,14 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ForceDiscriminator;
 import org.hibernate.annotations.Immutable;
 
 @Entity
 @Immutable
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "role_nam", discriminatorType = DiscriminatorType.STRING)
-@org.hibernate.annotations.ForceDiscriminator
+@ForceDiscriminator
 @Table(name="z_roles")
 public class Role implements Comparable<Role>, Serializable {
 	
