@@ -3,13 +3,9 @@ package example
 import java.io.Serializable
 import javax.persistence._
 
-import org.hibernate.annotations.Fetch
-import org.hibernate.annotations.FetchMode
-import org.hibernate.annotations.Immutable
 
 
 @Entity
-@Immutable
 @Table { val name="z_investigators" }
 class Investigator extends Serializable with Comparable[Investigator]
 {
@@ -31,8 +27,7 @@ class Investigator extends Serializable with Comparable[Investigator]
 
   var fax: String = _
   
-  @ManyToOne // { val fetch=FetchType.LAZY }
-  // @Fetch(FetchMode.JOIN)
+  @ManyToOne
   @JoinColumn { val name="email", val referencedColumnName="email" }
   var login: Login = _
 
